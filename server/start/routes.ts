@@ -33,8 +33,8 @@ Route.group(() => {
   Route.delete('projects/:id', 'ProjectsController.destroy').middleware('auth')
   Route.patch('projects/:id', 'ProjectsController.update').middleware('auth')
 
-  // Route.get("projects/:id/tasks", "TaskController.index").middleware("auth");
-  // Route.post("projects/:id/tasks", "TaskController.create").middleware("auth");
-  // Route.delete("tasks/:id", "TaskController.destroy").middleware("auth");
-  // Route.patch("tasks/:id", "TaskController.update").middleware("auth");
+  Route.get('projects/:id/tasks', 'TasksController.index').middleware('auth')
+  Route.post('projects/:id/tasks', 'TasksController.create').middleware('auth')
+  Route.delete('tasks/:id', 'TasksController.destroy').middleware('auth')
+  Route.patch('tasks/:id', 'TasksController.update').middleware('auth')
 }).prefix('api')

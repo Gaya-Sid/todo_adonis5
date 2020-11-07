@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, BelongsTo, belongsTo } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, BelongsTo, belongsTo, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
 import User from 'App/Models/User'
+import Task from './Task'
 
 export default class Project extends BaseModel {
   @column({ isPrimary: true })
@@ -20,4 +21,7 @@ export default class Project extends BaseModel {
 
   @belongsTo(() => User)
   public user: BelongsTo<typeof User>
+
+  @hasMany(() => Task)
+  public tasks: HasMany<typeof Task>
 }
