@@ -18,18 +18,4 @@ export default class UsersController {
     const token = await auth.use('api').attempt(email, password)
     return token.toJSON()
   }
-
-  public async index({}: HttpContextContract) {}
-
-  public async create({}: HttpContextContract) {}
-
-  public async store({}: HttpContextContract) {}
-
-  public async show({}: HttpContextContract) {}
-
-  public async edit({}: HttpContextContract) {}
-
-  public async update({}: HttpContextContract) {}
-
-  public async destroy({}: HttpContextContract) {}
 }
